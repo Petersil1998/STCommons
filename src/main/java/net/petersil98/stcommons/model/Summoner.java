@@ -18,7 +18,6 @@ public class Summoner {
     private int profileIcon;
     private long revisionDate;
     private int summonerLevel;
-    private Account account;
 
     public static Summoner getSummonerByName(String summonerName, Platform platform) {
         return RiotAPI.requestLoLSummonerEndpoint("summoners/by-name/", URLEncoder.encode(summonerName, StandardCharsets.UTF_8), platform, Summoner.class);
