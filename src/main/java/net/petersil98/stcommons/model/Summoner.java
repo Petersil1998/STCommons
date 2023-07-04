@@ -1,7 +1,8 @@
 package net.petersil98.stcommons.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.petersil98.core.http.RiotAPIRequest;
+import net.petersil98.core.constant.Platform;
+import net.petersil98.core.http.RiotAPI;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -10,36 +11,29 @@ import java.util.Objects;
 public class Summoner {
 
     private String id;
-
     private String accountId;
-
     private String puuid;
-
     private String name;
-
     @JsonProperty(value = "profileIconId")
     private int profileIcon;
-
     private long revisionDate;
-
     private int summonerLevel;
-
     private Account account;
 
-    public static Summoner getSummonerByName(String summonerName){
-        return RiotAPIRequest.requestLoLSummonerEndpoint("summoners/by-name/" + URLEncoder.encode(summonerName, StandardCharsets.UTF_8), Summoner.class);
+    public static Summoner getSummonerByName(String summonerName, Platform platform) {
+        return RiotAPI.requestLoLSummonerEndpoint("summoners/by-name/", URLEncoder.encode(summonerName, StandardCharsets.UTF_8), platform, Summoner.class);
     }
 
-    public static Summoner getSummonerByAccountID(String accountID){
-        return RiotAPIRequest.requestLoLSummonerEndpoint("summoners/by-account/" + accountID, Summoner.class);
+    public static Summoner getSummonerByAccountID(String accountID, Platform platform) {
+        return RiotAPI.requestLoLSummonerEndpoint("summoners/by-account/", accountID, platform, Summoner.class);
     }
 
-    public static Summoner getSummonerByPUUID(String puuid){
-        return RiotAPIRequest.requestLoLSummonerEndpoint("summoners/by-puuid/" + puuid, Summoner.class);
+    public static Summoner getSummonerByPUUID(String puuid, Platform platform) {
+        return RiotAPI.requestLoLSummonerEndpoint("summoners/by-puuid/", puuid, platform, Summoner.class);
     }
 
-    public static Summoner getSummonerByID(String id){
-        return RiotAPIRequest.requestLoLSummonerEndpoint("summoners/" + id, Summoner.class);
+    public static Summoner getSummonerByID(String id, Platform platform) {
+        return RiotAPI.requestLoLSummonerEndpoint("summoners/", id, platform, Summoner.class);
     }
 
     public String getId() {
@@ -68,13 +62,6 @@ public class Summoner {
 
     public int getSummonerLevel() {
         return this.summonerLevel;
-    }
-
-    public Account getAccount() {
-        if(this.account == null){
-            this.account = RiotAPIRequest.requestRiotAccountEndpoint("accounts/by-puuid/" + this.puuid, Account.class);
-        }
-        return this.account;
     }
 
     @Override

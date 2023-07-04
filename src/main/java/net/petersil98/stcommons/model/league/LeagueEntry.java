@@ -62,11 +62,6 @@ public class LeagueEntry {
         return summonerId;
     }
 
-    public Summoner getSummoner() {
-        if(this.summoner == null) this.summoner = Summoner.getSummonerByID(this.getSummonerId());
-        return this.summoner;
-    }
-
     @Override
     public String toString() {
         return String.format("%s %d LP", this.summonerName, this.leaguePoints);

@@ -1,5 +1,8 @@
 package net.petersil98.stcommons.model;
 
+import net.petersil98.core.constant.Region;
+import net.petersil98.core.http.RiotAPI;
+
 import java.util.Objects;
 
 public class Account {
@@ -7,7 +10,9 @@ public class Account {
     private String tagLine;
     private String puuid;
 
-    public Account(){}
+    public static Account getAccountByPuuid(String puuid, Region region) {
+        return RiotAPI.requestRiotAccountEndpoint("accounts/by-puuid/", puuid, region, Account.class);
+    }
 
     public String getGameName() {
         return this.gameName;

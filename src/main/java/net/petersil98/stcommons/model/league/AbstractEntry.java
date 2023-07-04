@@ -31,11 +31,6 @@ public abstract class AbstractEntry {
         return summonerName;
     }
 
-    public Summoner getSummoner() {
-        if(this.summoner == null) this.summoner = Summoner.getSummonerByID(this.getSummonerId());
-        return this.summoner;
-    }
-
     public int getWins() {
         return wins;
     }
