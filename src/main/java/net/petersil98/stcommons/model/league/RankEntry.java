@@ -1,12 +1,18 @@
 package net.petersil98.stcommons.model.league;
 
-import net.petersil98.core.constant.RankedDivision;
-import net.petersil98.core.constant.RankedTier;
+import net.petersil98.stcommons.constants.RankedDivision;
+import net.petersil98.stcommons.constants.RankedQueue;
+import net.petersil98.stcommons.constants.RankedTier;
 
-public class RankEntry extends AbstractEntry {
+public class RankEntry {
 
     public static final RankEntry UNRANKED = new RankEntry();
 
+    private RankedQueue queueType;
+    private String summonerId;
+    private String summonerName;
+    private int wins;
+    private int losses;
     private String leagueId;
     private RankedTier tier;
     private RankedDivision rank;
@@ -16,6 +22,26 @@ public class RankEntry extends AbstractEntry {
     private boolean freshBlood;
     private boolean hotStreak;
     private MiniSeries miniSeries;
+
+    public RankedQueue getQueueType() {
+        return queueType;
+    }
+
+    public String getSummonerId() {
+        return summonerId;
+    }
+
+    public String getSummonerName() {
+        return summonerName;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
 
     public String getLeagueId() {
         return this.leagueId;
@@ -55,6 +81,6 @@ public class RankEntry extends AbstractEntry {
 
     @Override
     public String toString() {
-        return String.format("[%s] %s %s %d LP", this.getQueueType(), this.tier, this.rank, this.leaguePoints);
+        return String.format("[%s] %s %s %d LP", this.queueType, this.tier, this.rank, this.leaguePoints);
     }
 }

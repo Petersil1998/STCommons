@@ -1,7 +1,7 @@
 package net.petersil98.stcommons.model.league;
 
-import net.petersil98.core.constant.RankedQueue;
-import net.petersil98.core.constant.RankedTier;
+import net.petersil98.stcommons.constants.RankedQueue;
+import net.petersil98.stcommons.constants.RankedTier;
 
 import java.util.List;
 

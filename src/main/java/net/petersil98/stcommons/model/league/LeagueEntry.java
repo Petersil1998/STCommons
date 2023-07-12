@@ -1,7 +1,6 @@
 package net.petersil98.stcommons.model.league;
 
-import net.petersil98.core.constant.RankedDivision;
-import net.petersil98.stcommons.model.Summoner;
+import net.petersil98.stcommons.constants.RankedDivision;
 
 public class LeagueEntry {
 
@@ -16,7 +15,6 @@ public class LeagueEntry {
     private MiniSeries miniSeries;
     private String summonerName;
     private String summonerId;
-    private Summoner summoner;
 
     public RankedDivision getRank() {
         return rank;
