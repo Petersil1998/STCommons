@@ -9,6 +9,7 @@ public enum RankedTier {
     SILVER(false),
     GOLD(false),
     PLATINUM(false),
+    EMERALD(false),
     DIAMOND(false),
     MASTER(true),
     GRANDMASTER(true),
