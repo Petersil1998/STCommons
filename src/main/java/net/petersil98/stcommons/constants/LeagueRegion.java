@@ -5,7 +5,7 @@ import net.petersil98.core.constant.Region;
 import static net.petersil98.stcommons.constants.LeaguePlatform.*;
 
 public class LeagueRegion extends Region {
-    public static final LeagueRegion AMERICA = new LeagueRegion("america");
+    public static final LeagueRegion AMERICA = new LeagueRegion("americas");
     public static final LeagueRegion EUROPE = new LeagueRegion("europe");
     public static final LeagueRegion ASIA = new LeagueRegion("asia");
     public static final LeagueRegion SEA = new LeagueRegion("sea");
