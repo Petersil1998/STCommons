@@ -19,6 +19,6 @@ public class LeagueRegion extends Region {
         if(platform.equals(EUNE) || platform.equals(EUW) || platform.equals(RU) || platform.equals(TR)) return EUROPE;
         if(platform.equals(KR) || platform.equals(JP)) return ASIA;
         if(platform.equals(OCE)) return SEA;
-        throw new IllegalArgumentException("Unmapped Platform " + platform + "!");
+        throw new IllegalArgumentException("No Mapping from Platform to Region for " + platform + "!");
     }
 }
