@@ -1,8 +1,6 @@
 package net.petersil98.stcommons.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.petersil98.core.constant.Platform;
-import net.petersil98.core.http.RiotAPI;
 import net.petersil98.stcommons.constants.LeaguePlatform;
 import net.petersil98.stcommons.http.LeagueAPI;
 
