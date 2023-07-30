@@ -2,6 +2,7 @@ package net.petersil98.stcommons.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.petersil98.stcommons.constants.LeaguePlatform;
+import net.petersil98.stcommons.constants.STConstants;
 import net.petersil98.stcommons.http.LeagueAPI;
 
 import java.net.URLEncoder;
@@ -82,8 +83,12 @@ public class Summoner {
         return this.name;
     }
 
-    public int getProfileIcon() {
+    public int getProfileIconID() {
         return this.profileIcon;
+    }
+
+    public String getProfileIconUrl() {
+        return String.format("%scdn/%s/img/profileicon/%s.png", STConstants.DDRAGON_BASE_PATH, STConstants.DDRAGON_VERSION, this.profileIcon);
     }
 
     public long getRevisionDate() {
