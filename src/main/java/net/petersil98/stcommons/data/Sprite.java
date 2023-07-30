@@ -69,7 +69,7 @@ public class Sprite {
      * @return The Image given by this Sprite
      */
     public BufferedImage getImageFromSprite() {
-        String path = String.format("%scdn/%s/img/sprite/%s", STConstants.DDRAGON_BASE_PATH, STConstants.DDRAGON_VERSION, this.getSprite());
+        String path = String.format("%s/cdn/%s/img/sprite/%s", STConstants.DDRAGON_BASE_PATH, STConstants.DDRAGON_VERSION, this.getSprite());
         try {
             return ImageIO.read(URI.create(path).toURL()).getSubimage(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         } catch (IOException e) {

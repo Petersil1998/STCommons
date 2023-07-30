@@ -88,7 +88,7 @@ public class Summoner {
     }
 
     public String getProfileIconUrl() {
-        return String.format("%scdn/%s/img/profileicon/%s.png", STConstants.DDRAGON_BASE_PATH, STConstants.DDRAGON_VERSION, this.profileIcon);
+        return String.format("%s/cdn/%s/img/profileicon/%s.png", STConstants.DDRAGON_BASE_PATH, STConstants.DDRAGON_VERSION, this.profileIcon);
     }
 
     public long getRevisionDate() {
